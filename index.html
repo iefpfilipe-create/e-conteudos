@@ -3,50 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slideshow Mastering Blender 3D</title>
+    <title>Slideshow Introdução UC02209</title>
 </head>
 <body>
 
     <div class="moodle-wrapper">
         <div class="moodle-slideshow-container" id="moodleMainContainer">
             
-            <!-- Slides apenas com as imagens -->
+            <!-- Slides com as imagens da UC02209 -->
             <div class="moodle-slide active">
-                <img src="https://iefpfilipe.infinityfree.me/Mastering_Blender_3D/Mastering_Blender_3D_page-0001.jpg" alt="Página 1">
+                <img src="https://iefpfilipe.infinityfree.me/introUC02209/intro 1.png" alt="Página 1">
             </div>
-            <div class="moodle-slide"><img src="https://iefpfilipe.infinityfree.me/Mastering_Blender_3D/Mastering_Blender_3D_page-0002.jpg" alt="Página 2"></div>
-            <div class="moodle-slide"><img src="https://iefpfilipe.infinityfree.me/Mastering_Blender_3D/Mastering_Blender_3D_page-0003.jpg" alt="Página 3"></div>
-            <div class="moodle-slide"><img src="https://iefpfilipe.infinityfree.me/Mastering_Blender_3D/Mastering_Blender_3D_page-0004.jpg" alt="Página 4"></div>
-            <div class="moodle-slide"><img src="https://iefpfilipe.infinityfree.me/Mastering_Blender_3D/Mastering_Blender_3D_page-0005.jpg" alt="Página 5"></div>
-            <div class="moodle-slide"><img src="https://iefpfilipe.infinityfree.me/Mastering_Blender_3D/Mastering_Blender_3D_page-0006.jpg" alt="Página 6"></div>
-            <div class="moodle-slide"><img src="https://iefpfilipe.infinityfree.me/Mastering_Blender_3D/Mastering_Blender_3D_page-0007.jpg" alt="Página 7"></div>
-            <div class="moodle-slide"><img src="https://iefpfilipe.infinityfree.me/Mastering_Blender_3D/Mastering_Blender_3D_page-0008.jpg" alt="Página 8"></div>
-            <div class="moodle-slide"><img src="https://iefpfilipe.infinityfree.me/Mastering_Blender_3D/Mastering_Blender_3D_page-0009.jpg" alt="Página 9"></div>
-            <div class="moodle-slide"><img src="https://iefpfilipe.infinityfree.me/Mastering_Blender_3D/Mastering_Blender_3D_page-0010.jpg" alt="Página 10"></div>
-            <div class="moodle-slide"><img src="https://iefpfilipe.infinityfree.me/Mastering_Blender_3D/Mastering_Blender_3D_page-0011.jpg" alt="Página 11"></div>
-            <div class="moodle-slide"><img src="https://iefpfilipe.infinityfree.me/Mastering_Blender_3D/Mastering_Blender_3D_page-0012.jpg" alt="Página 12"></div>
-            <div class="moodle-slide"><img src="https://iefpfilipe.infinityfree.me/Mastering_Blender_3D/Mastering_Blender_3D_page-0013.jpg" alt="Página 13"></div>
-            <div class="moodle-slide"><img src="https://iefpfilipe.infinityfree.me/Mastering_Blender_3D/Mastering_Blender_3D_page-0014.jpg" alt="Página 14"></div>
-            <div class="moodle-slide"><img src="https://iefpfilipe.infinityfree.me/Mastering_Blender_3D/Mastering_Blender_3D_page-0015.jpg" alt="Página 15"></div>
+            <div class="moodle-slide"><img src="https://iefpfilipe.infinityfree.me/introUC02209/intro 2.png" alt="Página 2"></div>
+            <div class="moodle-slide"><img src="https://iefpfilipe.infinityfree.me/introUC02209/intro 3.png" alt="Página 3"></div>
+            <div class="moodle-slide"><img src="https://iefpfilipe.infinityfree.me/introUC02209/intro 4.png" alt="Página 4"></div>
+            <div class="moodle-slide"><img src="https://iefpfilipe.infinityfree.me/introUC02209/intro 5.png" alt="Página 5"></div>
+            <div class="moodle-slide"><img src="https://iefpfilipe.infinityfree.me/introUC02209/intro 6.png" alt="Página 6"></div>
+            <div class="moodle-slide"><img src="https://iefpfilipe.infinityfree.me/introUC02209/intro 7.png" alt="Página 7"></div>
 
-            <!-- Controlos -->
+            <!-- Controlos de Navegação -->
             <button class="moodle-btn moodle-prev" id="btnPrev" aria-label="Anterior">&#10094;</button>
             <button class="moodle-btn moodle-next" id="btnNext" aria-label="Seguinte">&#10095;</button>
             
             <!-- Botão Play/Pause -->
             <button class="moodle-play-pause" id="btnPlayPause" aria-label="Reproduzir ou Pausar">&#10074;&#10074;</button>
 
-            <!-- Dots -->
+            <!-- Indicadores (Dots) -->
             <div class="moodle-dots" id="moodleDots"></div>
         </div>
     </div>
 
-    <script src="[https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js](https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js)"></script>
-
-
     <script>
         (function() {
-            // Injeção de CSS via JavaScript
+            // Injeção de CSS via JavaScript para evitar que o Moodle filtre os estilos
             const css = `
                 .moodle-wrapper { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 10px 0; }
                 .moodle-slideshow-container {
@@ -88,6 +77,7 @@
                 
                 @media (max-width: 600px) {
                     .moodle-btn { width: 32px; height: 32px; font-size: 16px; }
+                    .moodle-slideshow-container { aspect-ratio: 4 / 3; } /* Ajuste opcional para mobile se as imagens forem verticais */
                 }
             `;
             const styleHead = document.createElement('style');
@@ -106,6 +96,7 @@
             let isAutoPlaying = true;
 
             function init() {
+                // Criar dots dinamicamente
                 for (let i = 0; i < total; i++) {
                     const dot = document.createElement('div');
                     dot.className = 'moodle-dot' + (i === 0 ? ' active' : '');
@@ -113,6 +104,7 @@
                     dotsContainer.appendChild(dot);
                 }
 
+                // Eventos dos botões laterais
                 btnPrev.addEventListener('click', function() {
                     update(currentIndex - 1);
                     if (isAutoPlaying) resetTimer();
@@ -123,17 +115,19 @@
                     if (isAutoPlaying) resetTimer();
                 });
 
+                // Evento Play/Pause
                 btnPlayPause.addEventListener('click', function() {
                     if (isAutoPlaying) {
                         stopAuto();
-                        btnPlayPause.innerHTML = '&#9658;'; 
+                        btnPlayPause.innerHTML = '&#9658;'; // Ícone Play
                     } else {
                         startAuto();
-                        btnPlayPause.innerHTML = '&#10074;&#10074;'; 
+                        btnPlayPause.innerHTML = '&#10074;&#10074;'; // Ícone Pause
                     }
                     isAutoPlaying = !isAutoPlaying;
                 });
 
+                // Suporte para teclado
                 document.addEventListener('keydown', function(e) {
                     if (e.key === "ArrowLeft") btnPrev.click();
                     if (e.key === "ArrowRight") btnNext.click();
