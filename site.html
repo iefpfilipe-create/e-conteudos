@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UFCD 00279 - Gerir Canais de Comunicação Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .session-card { transition: transform 0.2s; }
+        .session-card:hover { transform: translateY(-5px); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header / Navbar -->
+    <header class="bg-white border-b sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-blue-600 text-white p-2 rounded-lg">
+                    <i class="fas fa-bullhorn fa-lg"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-xl leading-tight">UFCD 00279</h1>
+                    <p class="text-sm text-slate-500 uppercase tracking-wider">Gerir Canais de Comunicação Digital</p>
+                </div>
+            </div>
+            <nav class="flex gap-2">
+                <button onclick="switchTab('geral')" class="nav-btn px-4 py-2 rounded-full text-sm font-medium transition active bg-blue-100 text-blue-700" id="btn-geral">Geral</button>
+                <button onclick="switchTab('sessoes')" class="nav-btn px-4 py-2 rounded-full text-sm font-medium transition hover:bg-slate-100" id="btn-sessoes">Sessões</button>
+                <button onclick="switchTab('recursos')" class="nav-btn px-4 py-2 rounded-full text-sm font-medium transition hover:bg-slate-100" id="btn-recursos">Recursos</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        
+        <!-- ABA: ENQUADRAMENTO GERAL -->
+        <section id="geral" class="tab-content active space-y-8">
+            <div class="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-8 text-white shadow-xl">
+                <div class="max-w-3xl">
+                    <h2 class="text-3xl font-bold mb-4">Enquadramento Geral</h2>
+                    <p class="text-blue-100 mb-6">Esta unidade de formação foca-se na gestão estratégica e operacional dos diversos canais digitais, desde as redes sociais ao e-mail marketing e SEO.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                        <div class="flex items-center gap-2"><i class="fas fa-tag opacity-75"></i> <span>Código: UC00279</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-graduation-cap opacity-75"></i> <span>Referencial: CNQ</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-clock opacity-75"></i> <span>Carga Horária: 30 Horas</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-users opacity-75"></i> <span>Destinatários: Adultos (Qualificação/Requalificação)</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="md:col-span-2 bg-white rounded-2xl shadow-sm border p-6">
+                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                        <i class="fas fa-list-ol text-blue-600"></i> Estrutura Global
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead class="text-slate-500 border-b">
+                                <tr>
+                                    <th class="pb-3 font-semibold">Sessão</th>
+                                    <th class="pb-3 font-semibold">Tema</th>
+                                    <th class="pb-3 font-semibold text-right">Duração</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y">
+                                <tr class="hover:bg-slate-50 cursor-pointer" onclick="openSession(1)">
+                                    <td class="py-3 font-medium">1</td>
+                                    <td class="py-3 text-blue-600">Introdução à comunicação digital</td>
+                                    <td class="py-3 text-right">3h</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 cursor-pointer" onclick="openSession(2)">
+                                    <td class="py-3 font-medium">2</td>
+                                    <td class="py-3 text-blue-600">Estratégia de comunicação digital</td>
+                                    <td class="py-3 text-right">3h</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 cursor-pointer" onclick="openSession(3)">
+                                    <td class="py-3 font-medium">3</td>
+                                    <td class="py-3 text-blue-600">Gestão de redes sociais</td>
+                                    <td class="py-3 text-right">3h</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 cursor-pointer" onclick="openSession(4)">
+                                    <td class="py-3 font-medium">4</td>
+                                    <td class="py-3 text-blue-600">Criação e planeamento de conteúdos</td>
+                                    <td class="py-3 text-right">3h</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 cursor-pointer" onclick="openSession(5)">
+                                    <td class="py-3 font-medium">5</td>
+                                    <td class="py-3 text-blue-600">E-mail marketing e automação</td>
+                                    <td class="py-3 text-right">3h</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 cursor-pointer" onclick="openSession(6)">
+                                    <td class="py-3 font-medium">6</td>
+                                    <td class="py-3 text-blue-600">Websites, SEO e UX</td>
+                                    <td class="py-3 text-right">3h</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 cursor-pointer" onclick="openSession(7)">
+                                    <td class="py-3 font-medium">7</td>
+                                    <td class="py-3 text-blue-600">Publicidade digital e campanhas</td>
+                                    <td class="py-3 text-right">3h</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 cursor-pointer" onclick="openSession(8)">
+                                    <td class="py-3 font-medium">8</td>
+                                    <td class="py-3 text-blue-600">Métricas e análise</td>
+                                    <td class="py-3 text-right">3h</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 cursor-pointer" onclick="openSession(9)">
+                                    <td class="py-3 font-medium">9</td>
+                                    <td class="py-3 text-blue-600">Ferramentas de gestão digital</td>
+                                    <td class="py-3 text-right">3h</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 cursor-pointer" onclick="openSession(10)">
+                                    <td class="py-3 font-medium">10</td>
+                                    <td class="py-3 text-blue-600">Projeto prático e avaliação</td>
+                                    <td class="py-3 text-right">3h</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-white rounded-2xl shadow-sm border p-6">
+                        <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                            <i class="fas fa-check-circle text-green-500"></i> Metodologias Gerais
+                        </h3>
+                        <ul class="text-sm space-y-2 text-slate-600">
+                            <li class="flex items-start gap-2"><i class="fas fa-chevron-right text-[10px] mt-1.5 text-blue-400"></i> Método expositivo e interrogativo</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-chevron-right text-[10px] mt-1.5 text-blue-400"></i> Brainstorming e Discussão</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-chevron-right text-[10px] mt-1.5 text-blue-400"></i> Oficinas práticas e Simulação</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-chevron-right text-[10px] mt-1.5 text-blue-400"></i> Trabalho de projeto colaborativo</li>
+                        </ul>
+                    </div>
+                    <div class="bg-amber-50 border border-amber-100 rounded-2xl p-6">
+                        <h3 class="text-amber-800 font-bold mb-2">Avaliação Final</h3>
+                        <p class="text-sm text-amber-700 mb-3">A avaliação sumativa consiste no projeto final, apresentação oral e desempenho global nas sessões práticas.</p>
+                        <button onclick="switchTab('sessoes')" class="text-amber-900 font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all">
+                            Ver detalhes das sessões <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABA: DETALHE DAS SESSÕES -->
+        <section id="sessoes" class="tab-content space-y-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold">Planos de Sessão Detalhados</h2>
+                <span class="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-full font-medium">10 Sessões | 30h Totais</span>
+            </div>
+
+            <div id="sessions-container" class="grid grid-cols-1 gap-6">
+                <!-- Session cards will be generated by JS -->
+            </div>
+        </section>
+
+        <!-- ABA: RECURSOS E FERRAMENTAS -->
+        <section id="recursos" class="tab-content space-y-8">
+            <h2 class="text-2xl font-bold mb-6">Ferramentas e Bibliografia</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl shadow-sm border p-8">
+                    <h3 class="text-xl font-bold mb-6 text-indigo-600 flex items-center gap-2">
+                        <i class="fas fa-tools"></i> Ecossistema de Ferramentas
+                    </h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 text-center">
+                            <i class="fab fa-google text-2xl mb-2 text-red-500"></i>
+                            <p class="font-semibold text-sm">Google Workspace</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 text-center">
+                            <i class="fas fa-palette text-2xl mb-2 text-blue-500"></i>
+                            <p class="font-semibold text-sm">Canva</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 text-center">
+                            <i class="fab fa-facebook text-2xl mb-2 text-blue-600"></i>
+                            <p class="font-semibold text-sm">Meta Business</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 text-center">
+                            <i class="fas fa-chart-line text-2xl mb-2 text-green-500"></i>
+                            <p class="font-semibold text-sm">Analytics</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border p-8">
+                    <h3 class="text-xl font-bold mb-6 text-indigo-600 flex items-center gap-2">
+                        <i class="fas fa-book"></i> Referências Recomendadas
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex gap-4 items-start">
+                            <div class="w-10 h-10 bg-indigo-100 rounded flex items-center justify-center flex-shrink-0 text-indigo-600"><i class="fas fa-bookmark"></i></div>
+                            <div>
+                                <p class="font-bold">Marketing 5.0</p>
+                                <p class="text-sm text-slate-500 italic">Philip Kotler</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <div class="w-10 h-10 bg-indigo-100 rounded flex items-center justify-center flex-shrink-0 text-indigo-600"><i class="fas fa-bookmark"></i></div>
+                            <div>
+                                <p class="font-bold">Understanding Digital Marketing</p>
+                                <p class="text-sm text-slate-500 italic">Damian Ryan</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <div class="w-10 h-10 bg-indigo-100 rounded flex items-center justify-center flex-shrink-0 text-indigo-600"><i class="fas fa-bookmark"></i></div>
+                            <div>
+                                <p class="font-bold">Digital Marketing</p>
+                                <p class="text-sm text-slate-500 italic">Dave Chaffey</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-slate-500 text-sm">UFCD/UC00279 – Gerir os Canais de Comunicação Digital</p>
+            <p class="text-slate-400 text-xs mt-2">Plano de Sessão Formativo • CNQ</p>
+        </div>
+    </footer>
+
+    <script>
+        const sessionData = [
+            {
+                id: 1,
+                title: "Introdução à comunicação digital e canais digitais",
+                objectives: ["Identificar principais canais", "Reconhecer importância organizacional", "Distinguir canais próprios, pagos e conquistados"],
+                contents: ["Conceito e Evolução", "Tipologia de canais", "Omnicanal", "Tendências"],
+                timeline: [
+                    { time: "30 min", activity: "Apresentação e diagnóstico" },
+                    { time: "45 min", activity: "Exposição teórica" },
+                    { time: "45 min", activity: "Análise de exemplos reais" },
+                    { time: "30 min", activity: "Debate orientado" },
+                    { time: "30 min", activity: "Exercício prático de identificação" }
+                ]
+            },
+            {
+                id: 2,
+                title: "Estratégia de comunicação digital",
+                objectives: ["Definir objetivos", "Identificar públicos-alvo", "Elaborar estratégia simples"],
+                contents: ["Planeamento estratégico", "Definição de personas", "Jornada do cliente", "Objetivos SMART", "Plano editorial"],
+                timeline: [
+                    { time: "45 min", activity: "Conceitos fundamentais" },
+                    { time: "45 min", activity: "Construção de personas" },
+                    { time: "45 min", activity: "Objetivos SMART" },
+                    { time: "45 min", activity: "Trabalho: mini plano estratégico" }
+                ]
+            },
+            {
+                id: 3,
+                title: "Gestão de redes sociais",
+                objectives: ["Gerir perfis em redes sociais", "Adequar conteúdos", "Aplicar boas práticas"],
+                contents: ["Características das plataformas", "Calendário editorial", "Gestão da comunidade", "Netiqueta"],
+                timeline: [
+                    { time: "30 min", activity: "Introdução às plataformas" },
+                    { time: "60 min", activity: "Demonstração prática" },
+                    { time: "60 min", activity: "Criação de publicações" },
+                    { time: "30 min", activity: "Feedback e análise crítica" }
+                ]
+            },
+            {
+                id: 4,
+                title: "Criação e planeamento de conteúdos",
+                objectives: ["Produzir conteúdos adequados", "Aplicar princípios de copywriting", "Organizar calendário"],
+                contents: ["Tipologias de conteúdos", "Storytelling", "Copywriting", "Design Tools"],
+                timeline: [
+                    { time: "45 min", activity: "Tipologias de conteúdo" },
+                    { time: "45 min", activity: "Técnicas de copywriting" },
+                    { time: "60 min", activity: "Criação de conteúdos" },
+                    { time: "30 min", activity: "Partilha e revisão" }
+                ]
+            },
+            {
+                id: 5,
+                title: "E-mail marketing e automação",
+                objectives: ["Criar campanhas de e-mail", "Aplicar segmentação", "Conhecer automação"],
+                contents: ["Conceitos e Segmentação", "Taxas e Métricas", "Automação", "RGPD"],
+                timeline: [
+                    { time: "45 min", activity: "Fundamentos do e-mail marketing" },
+                    { time: "45 min", activity: "Plataformas e ferramentas" },
+                    { time: "60 min", activity: "Criação de campanha prática" },
+                    { time: "30 min", activity: "Análise de métricas" }
+                ]
+            },
+            {
+                id: 6,
+                title: "Websites, SEO e experiência do utilizador",
+                objectives: ["Princípios de SEO", "Fatores de usabilidade", "Otimização para motores de busca"],
+                contents: ["SEO on-page", "Keywords", "Estrutura Web", "UX/UI"],
+                timeline: [
+                    { time: "45 min", activity: "Introdução ao SEO" },
+                    { time: "45 min", activity: "UX e usabilidade" },
+                    { time: "60 min", activity: "Otimização de páginas" },
+                    { time: "30 min", activity: "Discussão dos resultados" }
+                ]
+            },
+            {
+                id: 7,
+                title: "Publicidade digital e campanhas pagas",
+                objectives: ["Distinguir formatos", "Estruturar campanhas", "Definir públicos"],
+                contents: ["Google Ads & Social Ads", "Segmentação avançada", "Remarketing", "Orçamentos"],
+                timeline: [
+                    { time: "45 min", activity: "Intro publicidade digital" },
+                    { time: "45 min", activity: "Tipologias de campanhas" },
+                    { time: "60 min", activity: "Simulação de campanha" },
+                    { time: "30 min", activity: "Análise de resultados" }
+                ]
+            },
+            {
+                id: 8,
+                title: "Métricas, análise e monitorização",
+                objectives: ["Interpretar métricas", "Utilizar analytics", "Monitorizar desempenho"],
+                contents: ["KPIs", "Google Analytics", "Relatórios", "Tomada de decisão"],
+                timeline: [
+                    { time: "45 min", activity: "Introdução às métricas" },
+                    { time: "45 min", activity: "Ferramentas analíticas" },
+                    { time: "60 min", activity: "Interpretação de relatórios" },
+                    { time: "30 min", activity: "Discussão e conclusões" }
+                ]
+            },
+            {
+                id: 9,
+                title: "Ferramentas de gestão digital",
+                objectives: ["Agendamento de conteúdos", "Ferramentas colaborativas", "Fluxos de trabalho"],
+                contents: ["Project Management", "Plataformas colaborativas", "Automação de tarefas"],
+                timeline: [
+                    { time: "45 min", activity: "Apresentação das ferramentas" },
+                    { time: "60 min", activity: "Exercícios práticos" },
+                    { time: "45 min", activity: "Simulação colaborativa" },
+                    { time: "30 min", activity: "Síntese final" }
+                ]
+            },
+            {
+                id: 10,
+                title: "Projeto prático e avaliação final",
+                objectives: ["Consolidar conhecimentos", "Plano de comunicação completo", "Apresentação soluções"],
+                contents: ["Desenvolvimento de projeto", "Apresentação oral", "Avaliação final"],
+                timeline: [
+                    { time: "60 min", activity: "Desenvolvimento do projeto" },
+                    { time: "60 min", activity: "Apresentação dos grupos" },
+                    { time: "30 min", activity: "Feedback instrutor" },
+                    { time: "30 min", activity: "Encerramento e nota final" }
+                ]
+            }
+        ];
+
+        function renderSessions() {
+            const container = document.getElementById('sessions-container');
+            container.innerHTML = sessionData.map(s => `
+                <div id="sessao-${s.id}" class="session-card bg-white rounded-2xl border p-6 md:p-8 flex flex-col md:flex-row gap-8 shadow-sm">
+                    <div class="md:w-1/3">
+                        <div class="text-blue-600 font-bold text-lg mb-2">Sessão ${s.id}</div>
+                        <h3 class="text-xl font-bold mb-4 leading-snug">${s.title}</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="text-xs uppercase tracking-widest text-slate-400 font-bold mb-2">Objetivos</h4>
+                                <ul class="text-sm space-y-1 text-slate-600">
+                                    ${s.objectives.map(o => `<li>• ${o}</li>`).join('')}
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase tracking-widest text-slate-400 font-bold mb-2">Conteúdos</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    ${s.contents.map(c => `<span class="bg-slate-100 text-slate-600 text-[10px] px-2 py-0.5 rounded font-medium">${c}</span>`).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 border-t md:border-t-0 md:border-l md:pl-8 pt-6 md:pt-0">
+                        <h4 class="text-xs uppercase tracking-widest text-slate-400 font-bold mb-4">Desenvolvimento (3h)</h4>
+                        <div class="space-y-3">
+                            ${s.timeline.map(t => `
+                                <div class="flex items-center justify-between text-sm p-3 bg-slate-50 rounded-lg">
+                                    <span class="text-slate-700">${t.activity}</span>
+                                    <span class="font-mono text-blue-600 font-bold whitespace-nowrap">${t.time}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            
+            document.querySelectorAll('.nav-btn').forEach(b => {
+                b.classList.remove('bg-blue-100', 'text-blue-700');
+                b.classList.add('hover:bg-slate-100');
+            });
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.add('bg-blue-100', 'text-blue-700');
+            activeBtn.classList.remove('hover:bg-slate-100');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openSession(id) {
+            switchTab('sessoes');
+            setTimeout(() => {
+                const el = document.getElementById('sessao-' + id);
+                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                el.classList.add('ring-2', 'ring-blue-500', 'ring-offset-4');
+                setTimeout(() => el.classList.remove('ring-2'), 2000);
+            }, 100);
+        }
+
+        window.onload = renderSessions;
+    </script>
+</body>
+</html>
