@@ -229,27 +229,70 @@
                     <br>
                      <br>
                      <br>
-                    <p>[VÍDEO INTRODUÇÃO]</p>
+                    <p class="text-center text-zinc-400 border border-dashed border-zinc-300 rounded-lg py-8 bg-zinc-50">[VÍDEO INTRODUÇÃO]</p>
                     <br>
                     <br>
                      <br>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                        <div class="p-4 bg-white border border-sage-100 rounded-xl hover:shadow-md transition">
-                            <h3 class="font-bold text-sage-900 text-sm mb-1">📘 Fundamentos Teóricos</h3>
-                            <p class="text-xs text-zinc-500">Aprenda sobre keyframes, curvas de interpolação Bézier, restrições espaciais, animação de câmaras e deformações faciais.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <!-- DESTAQUE FUNDAMENTOS TEÓRICOS -->
+                        <div class="p-5 bg-white border border-sage-200 rounded-xl hover:shadow-md transition duration-200">
+                            <div class="flex items-center gap-2.5 mb-3">
+                                <span class="text-xl">📘</span>
+                                <h3 class="font-bold text-sage-900 text-base">Fundamentos Teóricos</h3>
+                            </div>
+                            <p class="text-xs text-zinc-500 mb-4 leading-relaxed">
+                                Explore a arquitetura concetual necessária para dominar o tempo e o espaço digital:
+                            </p>
+                            <ul class="space-y-2 text-xs text-zinc-600">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-sage-500 font-bold">•</span>
+                                    <span><strong>Keyframes e Interpolação:</strong> A mecânica de registo de estados e a geração automática de intervalos intermédios.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-sage-500 font-bold">•</span>
+                                    <span><strong>Graph Editor e F-Curves:</strong> O ajuste matemático e visual das curvas de velocidade Bézier, Lineares e Constantes.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-sage-500 font-bold">•</span>
+                                    <span><strong>Constraints (Restrições):</strong> Automação espacial e cadeias mecânicas sem geração manual de chaves.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-sage-500 font-bold">•</span>
+                                    <span><strong>Shape Keys & Animação Facial:</strong> Deformações diretas em malhas de vértices para rigging facial detalhado.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-sage-500 font-bold">•</span>
+                                    <span><strong>Os 12 Princípios da Disney:</strong> Regras eternas de animação para infundir carisma, peso e realismo orgânico aos objetos.</span>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="p-4 bg-white border border-sage-100 rounded-xl hover:shadow-md transition">
-                            <h3 class="font-bold text-sage-900 text-sm mb-1">🛠️ Execução Prática</h3>
-                            <p class="text-xs text-zinc-500">Desenvolva uma clássica bola a saltar (Bouncing Ball) e configure uma órbita fluida de câmara para apresentação de produtos.</p>
+                        
+                        <!-- DESTAQUE EXECUÇÃO PRÁTICA -->
+                        <div class="p-5 bg-white border border-sage-200 rounded-xl hover:shadow-md transition duration-200">
+                            <div class="flex items-center gap-2.5 mb-3">
+                                <span class="text-xl">🛠️</span>
+                                <h3 class="font-bold text-sage-900 text-base">Execução Prática</h3>
+                            </div>
+                            <p class="text-xs text-zinc-500 mb-4 leading-relaxed">
+                                Console o conhecimento adquirido através de projetos de modelação estruturados passo a passo:
+                            </p>
+                            <ul class="space-y-3.5 text-xs text-zinc-600">
+                                <li class="flex items-start gap-2.5 p-2 bg-sage-50/40 rounded-lg border border-sage-100">
+                                    <span class="text-lg">🟡</span>
+                                    <div>
+                                        <p class="font-bold text-zinc-800">Exercício 1: A Bola a Saltar</p>
+                                        <p class="text-[11px] text-zinc-500 mt-0.5">Construa o clássico impacto físico (Bouncing Ball), aplicando conceitos estruturais de <em>Squash and Stretch</em>, gravidade, arcos fluidos de velocidade no Graph Editor e <em>Ease-in/out</em>.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-2.5 p-2 bg-sage-50/40 rounded-lg border border-sage-100">
+                                    <span class="text-lg">🔄</span>
+                                    <div>
+                                        <p class="font-bold text-zinc-800">Exercício 2: Órbita de Câmara</p>
+                                        <p class="text-[11px] text-zinc-500 mt-0.5">Implemente uma rotação cinemática contínua a 360° em torno de um modelo de produto focado no centro, utilizando a técnica profissional do pivô <em>Empty</em> e interpolação linear limpa.</p>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                    </div>
-                    
-                    <div class="flex justify-end pt-4 border-t border-sage-100">
-                        <button onclick="navigate('c71')" class="bg-sage-500 hover:bg-sage-600 text-white font-semibold text-sm px-6 py-3 rounded-xl shadow-md transition-all flex items-center gap-2">
-                            Iniciar Estudo (7.1)
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                        </button>
-                    </div>
                 </div>
             </section>
 
@@ -297,7 +340,7 @@
                 </div>
 
                 <p class="text-zinc-600 leading-relaxed mb-6">
-                    A animação 3D bem-sucedida baseia-se fortemente na compreensão das físicas do mundo real e na aplicação artística de expressividade física, sendo universalmente estruturada a partir dos clássicos <strong>12 Princípios da Animação</strong>.
+                    A animação 3D bem-sucedida baseia-se fortemente na compreensão das físicas do mundo real e na aplicação artística de expressividade física, sendo universalmente estruturada a partir dos clássicos <strong>12 Princípios da Animação</strong> que iremos falar no ponto 7.8.
                 </p>
 
                 <!-- Navigation Buttons -->
