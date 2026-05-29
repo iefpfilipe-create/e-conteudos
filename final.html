@@ -26,36 +26,47 @@
             }
         }
     </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #fcfdfc;
-            color: #2d3832;
-        }
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f4f8f5;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #cfe2d4;
-            border-radius: 3px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #51946b;
-        }
-        /* Active Navigation Indicator */
-        .active-nav-item {
-            border-left-color: #51946b !important;
-            background-color: rgba(81, 148, 107, 0.08);
-            color: #1d3827 !important;
-            font-weight: 600;
-        }
-    </style>
+   <script type="text/javascript">
+        (function() {
+            var cssRules = `
+                @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+                body {
+                    font-family: 'Inter', sans-serif;
+                    background-color: #fcfdfc;
+                    color: #2d3832;
+                }
+                /* Custom Scrollbar */
+                ::-webkit-scrollbar {
+                    width: 6px;
+                    height: 6px;
+                }
+                ::-webkit-scrollbar-track {
+                    background: #f4f8f5;
+                }
+                ::-webkit-scrollbar-thumb {
+                    background: #cfe2d4;
+                    border-radius: 3px;
+                }
+                ::-webkit-scrollbar-thumb:hover {
+                    background: #51946b;
+                }
+                /* Active Navigation Indicator */
+                .active-nav-item {
+                    border-left-color: #51946b !important;
+                    background-color: rgba(81, 148, 107, 0.08);
+                    color: #1d3827 !important;
+                    font-weight: 600;
+                }
+		#region-main { width: 100%;} 
+                .activity-title, activity-name {display:none; color:red;}
+            `;
+
+            var styleElement = document.createElement('style');
+            styleElement.appendChild(document.createTextNode(cssRules));
+            document.getElementsByTagName('head')[0].appendChild(styleElement);
+        })();
+    </script>
+
 </head>
 <body class="overflow-x-hidden min-h-screen flex flex-col">
 
@@ -1315,17 +1326,6 @@
             navigate(hash || 'intro');
         }
     </script>
-      <script type="text/javascript">
-    (function() {
-      var cssRules = `
-      #region-main { width: 100%;} 
-      .activity-title, activity-name {display:none; color:red;}
-    `;
 
-      var styleElement = document.createElement('style');
-      styleElement.appendChild(document.createTextNode(cssRules));
-      document.getElementsByTagName('head')[0].appendChild(styleElement);
-    })();
-  </script>
 </body>
 </html>
